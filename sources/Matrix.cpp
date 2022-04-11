@@ -58,7 +58,7 @@ namespace zich {
         stringstream ss1(str);
         string line;
         while(getline(ss1, line, ',')) {
-            if(line == "\0" || (rows > 0 && line[0] != ' ')) {
+            if(line.empty() || (rows > 0 && line[0] != ' ')) {
                 throw invalid_argument("bad input! 2");
             }
             rows++;
